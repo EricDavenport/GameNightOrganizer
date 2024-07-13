@@ -10,5 +10,6 @@
 - [ ] User Profiles
 - [x] Friends list
 - [X] Add participants from friends list
+- [X] Add new game view
 
-### Cleanup Read me
+### Clean up Read me
