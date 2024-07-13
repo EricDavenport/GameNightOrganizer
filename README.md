@@ -11,4 +11,4 @@
 [] Friends list
 [] Add participants from friends list
 
-### Cleant up Read me
+### Cleanup Read me
