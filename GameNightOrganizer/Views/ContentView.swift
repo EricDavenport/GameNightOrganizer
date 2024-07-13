@@ -3,6 +3,8 @@ import SwiftUI
 struct ContentView: View {
     @State private var events: [GameNightEvent] = []
     @State private var showingAddEvent = false
+    @State private var users: [User] = []
+    @State private var currentUser: User?
     
     var body: some View {
         NavigationView {
@@ -26,7 +28,7 @@ struct ContentView: View {
             }
         }
         .sheet(isPresented: $showingAddEvent) {
-            AddEventView(events: $events)
+            AddEventView(events: $events, users: $users)
         }
     }
     
