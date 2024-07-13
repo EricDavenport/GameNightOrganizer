@@ -1,14 +1,14 @@
 # Family Game Night Organizer App
 
-- [ ] Event view list
-- [ ] Add new event
-- [ ] Event Detail
-- [ ] Ability to add food
-- [ ] Ability to suggest food
-- [ ] Suggesst games
-- [ ] Add games
+- [X] Event view list
+- [X] Add new event
+- [X] Event Detail
+- [X] Ability to add food
+- [X] Ability to suggest food
+- [X] Suggesst games
+- [X] Add games
 - [ ] User Profiles
-- [ ] Friends list
-- [ ] Add participants from friends list
+- [x] Friends list
+- [X] Add participants from friends list
 
 ### Cleanup Read me
