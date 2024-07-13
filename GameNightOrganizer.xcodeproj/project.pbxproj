@@ -18,6 +18,7 @@
 		586EBCF52C42260D00C1E6BD /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586EBCF42C42260D00C1E6BD /* Game.swift */; };
 		586EBCF72C42266900C1E6BD /* Food.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586EBCF62C42266900C1E6BD /* Food.swift */; };
 		586EBCF92C422AA600C1E6BD /* MultipleSelectionRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586EBCF82C422AA600C1E6BD /* MultipleSelectionRow.swift */; };
+		586EBCFC2C42326800C1E6BD /* AddGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586EBCFB2C42326800C1E6BD /* AddGameView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 		586EBCF42C42260D00C1E6BD /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		586EBCF62C42266900C1E6BD /* Food.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Food.swift; sourceTree = "<group>"; };
 		586EBCF82C422AA600C1E6BD /* MultipleSelectionRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleSelectionRow.swift; sourceTree = "<group>"; };
+		586EBCFB2C42326800C1E6BD /* AddGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGameView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +91,7 @@
 				584AEA892C41E5BD00213D0C /* ContentView.swift */,
 				584AEA972C41E73000213D0C /* EventDetailView.swift */,
 				584AEA992C41E76900213D0C /* AddEventView.swift */,
+				586EBCFB2C42326800C1E6BD /* AddGameView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -192,6 +195,7 @@
 			files = (
 				584AEA9A2C41E76900213D0C /* AddEventView.swift in Sources */,
 				586EBCF92C422AA600C1E6BD /* MultipleSelectionRow.swift in Sources */,
+				586EBCFC2C42326800C1E6BD /* AddGameView.swift in Sources */,
 				584AEA982C41E73000213D0C /* EventDetailView.swift in Sources */,
 				586EBCF52C42260D00C1E6BD /* Game.swift in Sources */,
 				586EBCF32C4225A300C1E6BD /* User.swift in Sources */,
