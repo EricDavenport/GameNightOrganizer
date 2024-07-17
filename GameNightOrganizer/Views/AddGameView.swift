@@ -12,7 +12,7 @@ struct AddGameView: View {
         NavigationView {
             Form {
                 Section(header: Text("Game Details")) {
-                    TextField("Game NAme", text: $gameName)
+                    TextField("Game Name", text: $gameName)
                     Stepper(value: $numberOfPlayers, in: 2...20) {
                         Text("Number of players: \(numberOfPlayers)")
                     }

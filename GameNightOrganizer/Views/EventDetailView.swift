@@ -2,6 +2,8 @@ import SwiftUI
 
 struct EventDetailView: View {
     var event: GameNightEvent
+    @State private var suggestedGames: [Game] = []
+    @State private var showingAddGames = false
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -33,10 +35,18 @@ struct EventDetailView: View {
                 Text(food.name)
             }
             
+            if isHost {
+                
+            }
+            
             Spacer()
         }
         .padding()
         .navigationTitle("Event Details")
+    }
+    
+    private var isHost: Bool {
+        return true
     }
 }
 
@@ -47,17 +57,9 @@ private let dateFormatter: DateFormatter = {
     return formatter
 }()
 
-//#Preview {
-//    let user1 = User(name: "Eric", friendsList: [], friendIDs: [])
-//    let user2 = User(name: "Wayne", friendsList: [], friendIDs: [])
-//    let user3 = User(name: "Tima", friendsList: [], friendIDs: [])
-//    let user4 = User(name: "Ashlie", friendsList: [], friendIDs: [])
-//
-//    EventDetailView(event: <#T##GameNightEvent#>)
-//}
 struct EventDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        let sampleEvent = GameNightEvent(name: "Sample Event", date: Date(), participants: [User(name: "Eric", friendsList: [], friendIDs: [])], games: [Game(name: "Sample Game", numberOfPlayers: 4, isAdultOnly: false, suggestBy: nil)], foodSuggestions: [Food(name: "Pizza", suggestedBy: nil)])
+        let sampleEvent = GameNightEvent(name: "Sample Event", date: Date(), participants: [User(name: "Eric", email: "a@email.com", friendList: [], friendIDs: [])], games: [Game(name: "Sample Game", numberOfPlayers: 4, isAdultOnly: false, suggestBy: nil)], foodSuggestions: [Food(name: "Pizza", suggestedBy: nil)])
         EventDetailView(event: sampleEvent)
     }
 }

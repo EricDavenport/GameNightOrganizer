@@ -10,6 +10,7 @@ struct AddEventView: View {
     @State private var selectedParticipants: Set<UUID> = []
     @State private var games: [Game] = []
     @State private var foodSuggestions: [Food] = []
+    @State private var showingAddGame = false
     
     var body: some View {
         NavigationView {
@@ -39,9 +40,15 @@ struct AddEventView: View {
                         games.remove(atOffsets: indexSet)
                     }
                     
-                    Button(action: addGame) {
+                    Button(action: {
+                        showingAddGame = true
+                    }) {
                         Text("Add Game")
                     }
+                    .sheet(isPresented: $showingAddGame) {
+                        AddGameView(games: $games)
+                    }
+
                 }
                 
                 Section(header: Text("Food Suggestions")) {
@@ -67,7 +74,7 @@ struct AddEventView: View {
                             date: eventDate,
                             participants: participants,
                             games: games,
-                            foodSuggestions: foodSuggestions
+                            foodSuggestions: foodSuggestions 
                         )
                         events.append(newEvent)
                         presentationMode.wrappedValue.dismiss()
@@ -78,11 +85,6 @@ struct AddEventView: View {
         }
     }
     
-    private func addGame() {
-        let newGame = Game(name: "New Game", numberOfPlayers: 4, isAdultOnly: false)
-        games.append(newGame)
-    }
-    
     private func addFood() {
         let newFood = Food(name: "New Food", suggestedBy: nil)
         foodSuggestions.append(newFood)
@@ -91,7 +93,7 @@ struct AddEventView: View {
 
 struct AddEventView_Previews: PreviewProvider {
     @State static var events: [GameNightEvent] = []
-    @State static var users: [User] = [User(name: "Eric", friendsList: [], friendIDs: [])]
+    @State static var users: [User] = [User(name: "Eric", email: "a@email.com", friendList: [], friendIDs: []),User(name: "Danny", email: "a@email.com", friendList: [], friendIDs: []),User(name: "Jay", email: "a@email.com", friendList: [], friendIDs: [])]
     static var previews: some View {
         AddEventView(events: $events, users: $users)
     }

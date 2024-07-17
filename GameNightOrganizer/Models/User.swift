@@ -1,8 +1,10 @@
 import Foundation
 
-struct User: Identifiable {
+struct User: Identifiable, Codable {
     var id = UUID()
+    var firebaseID: String?
     var name: String
-    var friendsList: [User]
-    var friendIDs: [UUID] // To track friends by ID for easier reference
+    var email: String
+    var friendList: [UUID]
+    var friendIDs: [String]  // Store firebase IDs
 }
