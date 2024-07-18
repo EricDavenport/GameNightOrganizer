@@ -1,5 +1,6 @@
-# Family Game Night Organizer App
+# _Family Game Night Organizer App_
 
+## _To Do List_
 - [X] Event view list
 - [X] Add new event
 - [X] Event Detail
@@ -11,20 +12,32 @@
 - [x] Friends list
 - [X] Add participants from friends list
 - [X] Add new game view
-- [ ] Connect Firebase
-    [ ] Auth -  Hashing
-    [ ] Storage
-    [ ] DB
+- [X] Connect Firebase
+    - [ ] Auth -  Hashing
+    - [ ] Storage
+    - [ ] DB
 - [ ] Add Food View
-- [ ] Profile views
+- [X] Profile views
+- [ ] Manage event
+    - [ ] Edit event
+     - [ ] Edit button on even
+     - [ ] Add and remove games
+     - [ ] Add and remove food
+     - [ ] Add and remove participants
+- [ ] Persist user across app
 
-- [ ] Polish the app - look pretty
+- [ ] Polish the app
+    - [ ] Funtions
+    - [ ] MVVM
+    - [ ] Move functions from views
+- [ ] Make it look pretty
  
-### Clean up Read me
 
-Notes: 
+### _Notes:_ 
 - [X] (C)reation
         
 - [ ] (R)ead
 - [ ] (U)pdate
 - [ ] (D)estroy
+
+### Clean up Read me
