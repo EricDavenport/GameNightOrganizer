@@ -59,7 +59,7 @@ private let dateFormatter: DateFormatter = {
 
 struct EventDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        let sampleEvent = GameNightEvent(name: "Sample Event", date: Date(), participants: [User(name: "Eric", email: "a@email.com", friendList: [], friendIDs: [])], games: [Game(name: "Sample Game", numberOfPlayers: 4, isAdultOnly: false, suggestBy: nil)], foodSuggestions: [Food(name: "Pizza", suggestedBy: nil)])
+        let sampleEvent = GameNightEvent(name: "Sample Event", date: Date(), participants: [User(firebaseID: "1234", name: "Eric", email: "a@email.com", friendList: [], friendIDs: [])], games: [Game(name: "Sample Game", numberOfPlayers: 4, isAdultOnly: false, suggestBy: nil)], foodSuggestions: [Food(name: "Pizza", suggestedBy: nil)])
         EventDetailView(event: sampleEvent)
     }
 }

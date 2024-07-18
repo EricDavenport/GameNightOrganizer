@@ -5,6 +5,7 @@ struct AddGameView: View {
     @Environment(\.presentationMode) var presentationMode
     @Binding var games: [Game]
     @State private var gameName = ""
+    @State private var gameDescription = ""
     @State private var numberOfPlayers = 2
     @State private var isAdultOnly = false
     
@@ -12,16 +13,17 @@ struct AddGameView: View {
         NavigationView {
             Form {
                 Section(header: Text("Game Details")) {
-                    TextField("Game Name", text: $gameName)
+                    TextField("Name of game", text: $gameName)
                     Stepper(value: $numberOfPlayers, in: 2...20) {
                         Text("Number of players: \(numberOfPlayers)")
                     }
                     Toggle(isOn: $isAdultOnly) {
                         Text("Adult Only")
                     }
+                    TextField("Game description", text: $gameDescription)
                 }
             }
-            .navigationTitle("Add New Game")
+            .navigationTitle("New Game")
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
                     Button("Cancel") {

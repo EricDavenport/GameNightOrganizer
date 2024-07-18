@@ -29,6 +29,7 @@
 		587FE6E42C4863B40087BFDE /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 587FE6E32C4863B40087BFDE /* FirebaseMessaging */; };
 		587FE6E62C4863B40087BFDE /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 587FE6E52C4863B40087BFDE /* FirebaseStorage */; };
 		587FE6E82C4864EC0087BFDE /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587FE6E72C4864EC0087BFDE /* AuthView.swift */; };
+		587FE6EA2C48A9260087BFDE /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587FE6E92C48A9260087BFDE /* ProfileView.swift */; };
 		5898B2772C473E6200787D34 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5898B2762C473E6200787D34 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
@@ -47,6 +48,7 @@
 		586EBCF82C422AA600C1E6BD /* MultipleSelectionRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleSelectionRow.swift; sourceTree = "<group>"; };
 		586EBCFB2C42326800C1E6BD /* AddGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGameView.swift; sourceTree = "<group>"; };
 		587FE6E72C4864EC0087BFDE /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
+		587FE6E92C48A9260087BFDE /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		5898B2762C473E6200787D34 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -116,6 +118,7 @@
 				584AEA992C41E76900213D0C /* AddEventView.swift */,
 				586EBCFB2C42326800C1E6BD /* AddGameView.swift */,
 				587FE6E72C4864EC0087BFDE /* AuthView.swift */,
+				587FE6E92C48A9260087BFDE /* ProfileView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -236,6 +239,7 @@
 				586EBCF92C422AA600C1E6BD /* MultipleSelectionRow.swift in Sources */,
 				586EBCFC2C42326800C1E6BD /* AddGameView.swift in Sources */,
 				584AEA982C41E73000213D0C /* EventDetailView.swift in Sources */,
+				587FE6EA2C48A9260087BFDE /* ProfileView.swift in Sources */,
 				586EBCF52C42260D00C1E6BD /* Game.swift in Sources */,
 				586EBCF32C4225A300C1E6BD /* User.swift in Sources */,
 				584AEA962C41E66E00213D0C /* GameNightEvent.swift in Sources */,
