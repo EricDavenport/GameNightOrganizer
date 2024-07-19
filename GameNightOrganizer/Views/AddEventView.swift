@@ -9,7 +9,7 @@ struct AddEventView: View {
     @State private var eventDate = Date()
     @State private var selectedParticipants: Set<UUID> = []
     @State private var games: [Game] = []
-    @State private var foodSuggestions: [Food] = []
+    @State private var foodSuggestions: [String] = []
     @State private var showingAddGame = false
     
     var body: some View {
@@ -70,9 +70,10 @@ struct AddEventView: View {
                     Button("Save") {
                         let participants = users.filter { selectedParticipants.contains($0.id) }
                         let newEvent = GameNightEvent(
+                            id: UUID(),
                             name: eventName,
                             date: eventDate,
-                            participants: participants,
+                            participants: participants.compactMap { $0.id },
                             games: games,
                             foodSuggestions: foodSuggestions
                         )

@@ -39,41 +39,24 @@ struct ProfileView: View {
     }
     
     private func loadUserProfile() {
-        guard let user = Auth.auth().currentUser else { return }
-        let db = Firestore.firestore()
-        db.collection("users").document(user.uid).getDocument { document, error in
-            if let document = document, document.exists {
-                let data = document.data() ?? [:]
-                let id = UUID(uuidString: data["id"] as? String ?? "") ?? UUID()
-                let name = data["name"] as? String ?? ""
-                let email = data["email"] as? String ?? ""
-                let friendList = (data["friendList"] as? [String] ?? []).compactMap { UUID(uuidString: $0) }
-                let friendIDs = data["friendIDs"] as? [String] ?? []
-                self.user = User(
-                    id: id,
-                    firebaseID: user.uid,
-                    name: name,
-                    email: email,
-                    friendList: friendList,
-                    friendIDs: friendIDs
-                )
-                self.newName = name
-            } else {
-                self.errorMessage = error?.localizedDescription
+        UserDatabaseManager.shared.loadUserProfile { result in
+            switch result {
+                case .success(let user):
+                    self.user = user
+                    self.newName = user.name
+                case .failure(let error):
+                    self.errorMessage = error.localizedDescription
             }
         }
     }
     
     private func updateProfile() {
-        guard let user = Auth.auth().currentUser else { return }
-        let db = Firestore.firestore()
-        db.collection("users").document(user.uid).updateData([
-            "name": newName
-        ]) { error in
-            if let error = error {
-                self.errorMessage = error.localizedDescription
-            } else {
-                self.user?.name = newName
+        UserDatabaseManager.shared.updateProfile(name: newName) { result in
+            switch result {
+                case .success:
+                    self.user?.name = newName
+                case .failure(let error):
+                    self.errorMessage = error.localizedDescription
             }
         }
     }

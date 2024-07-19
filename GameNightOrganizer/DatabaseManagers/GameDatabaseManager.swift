@@ -2,7 +2,7 @@ import Firebase
 import FirebaseFirestore
 
 class GameDatabaseManager {
-    static let shaeed = GameDatabaseManager()
+    static let shared = GameDatabaseManager()
     
     private init() {}
     
