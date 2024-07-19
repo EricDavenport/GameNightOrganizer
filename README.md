@@ -3,7 +3,7 @@
 ## _To Do List_
 - [X] Event view list
 - [X] Add new event
-- [X] Event Detail
+- [X] Event detail view
 - [X] Ability to add food
 - [X] Ability to suggest food
 - [X] Suggesst games
@@ -13,13 +13,15 @@
 - [X] Add participants from friends list
 - [X] Add new game view
 - [X] Connect Firebase
-    - [ ] Auth -  Hashing
+    - [X] Auth
     - [ ] Storage
-    - [ ] DB Manager
-     - [ ] Updated
-     - [ ] Load Profile
-- [ ] Add Food View
-- [X] Profile views
+    - [X] DB Manager
+     - [ ] Game database manager
+     - [X] User profile database manager
+     - [ ] Event database manager
+     - [ ] Upadted view with managers
+- [ ] Add food view
+- [X] Profile view
 - [ ] Manage event
     - [ ] Edit event
      - [ ] Edit button on even
@@ -37,9 +39,26 @@
 
 ### _Notes:_ 
 - [X] (C)reation
-        
-- [ ] (R)ead
-- [ ] (U)pdate
+    - [ ] User profile
+    - [ ] New events
+    - [ ] New food
+    - [ ] New games
+    - [ ] Add friends
+- [X] (R)ead
+    - [ ] Events
+    - [ ] Games
+    - [ ] Food
+    - [ ] Friends
+    - [ ] Users
+- [X] (U)pdate
+    - [ ] Profile
+    - [ ] Events
+    - [ ] Food
+    - [ ] Games
 - [ ] (D)estroy
+    - [ ] Events
+    - [ ] Remove friends
+    - [ ] Remove/Delete food
+    - [ ] Remove/Delete games
 
 ### Clean up Read me
