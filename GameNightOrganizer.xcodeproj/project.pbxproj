@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		581DBC742C4A0E2000A09E9E /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 581DBC732C4A0E2000A09E9E /* DatabaseManager.swift */; };
 		584AEA882C41E5BD00213D0C /* GameNightOrganizerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584AEA872C41E5BD00213D0C /* GameNightOrganizerApp.swift */; };
 		584AEA8A2C41E5BD00213D0C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584AEA892C41E5BD00213D0C /* ContentView.swift */; };
 		584AEA8C2C41E5BE00213D0C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 584AEA8B2C41E5BE00213D0C /* Assets.xcassets */; };
@@ -34,6 +35,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		581DBC732C4A0E2000A09E9E /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
 		584AEA842C41E5BD00213D0C /* GameNightOrganizer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GameNightOrganizer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		584AEA872C41E5BD00213D0C /* GameNightOrganizerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameNightOrganizerApp.swift; sourceTree = "<group>"; };
 		584AEA892C41E5BD00213D0C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -72,6 +74,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		581DBC722C4A0E0600A09E9E /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				581DBC732C4A0E2000A09E9E /* DatabaseManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
 		584AEA7B2C41E5BD00213D0C = {
 			isa = PBXGroup;
 			children = (
@@ -91,6 +101,7 @@
 		584AEA862C41E5BD00213D0C /* GameNightOrganizer */ = {
 			isa = PBXGroup;
 			children = (
+				581DBC722C4A0E0600A09E9E /* Managers */,
 				5898B2762C473E6200787D34 /* GoogleService-Info.plist */,
 				584AEA9D2C41E78700213D0C /* App */,
 				584AEA9B2C41E77200213D0C /* Views */,
@@ -237,6 +248,7 @@
 			files = (
 				584AEA9A2C41E76900213D0C /* AddEventView.swift in Sources */,
 				586EBCF92C422AA600C1E6BD /* MultipleSelectionRow.swift in Sources */,
+				581DBC742C4A0E2000A09E9E /* DatabaseManager.swift in Sources */,
 				586EBCFC2C42326800C1E6BD /* AddGameView.swift in Sources */,
 				584AEA982C41E73000213D0C /* EventDetailView.swift in Sources */,
 				587FE6EA2C48A9260087BFDE /* ProfileView.swift in Sources */,
