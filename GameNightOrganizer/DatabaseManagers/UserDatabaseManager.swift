@@ -1,8 +1,8 @@
 import Firebase
 import FirebaseFirestore
 
-class GameDatabaseManager {
-    static let shared = GameDatabaseManager()
+class UserDatabaseManager {
+    static let shared = UserDatabaseManager()
     
     private let db = Firestore.firestore()
     
