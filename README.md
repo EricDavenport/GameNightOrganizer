@@ -15,7 +15,9 @@
 - [X] Connect Firebase
     - [ ] Auth -  Hashing
     - [ ] Storage
-    - [ ] DB
+    - [ ] DB Manager
+     - [ ] Updated
+     - [ ] Load Profile
 - [ ] Add Food View
 - [X] Profile views
 - [ ] Manage event
