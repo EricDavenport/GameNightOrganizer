@@ -4,9 +4,10 @@ import FirebaseFirestore
 class UserDatabaseManager {
     static let shared = UserDatabaseManager()
     
+    private init() {}
+    
     private let db = Firestore.firestore()
     
-    private init() {}
     
     func loadUserProfile(completion: @escaping (Result<User, Error>) -> Void) {
         guard let user = Auth.auth().currentUser else {
@@ -23,12 +24,12 @@ class UserDatabaseManager {
                 let friendList = (data["friendList"] as? [String] ?? []).compactMap { UUID(uuidString: $0) }
                 let friendIDs = data["friendIDs"] as? [String] ?? []
                 let user = User(
-                            id: id,
+                    id: id,
                     firebaseID: user.uid,
-                          name: name,
-                         email: email,
+                    name: name,
+                    email: email,
                     friendList: friendList,
-                     friendIDs: friendIDs
+                    friendIDs: friendIDs
                 )
                 completion(.success(user))
             } else {

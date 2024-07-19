@@ -48,7 +48,7 @@ struct AddEventView: View {
                     .sheet(isPresented: $showingAddGame) {
                         AddGameView(games: $games)
                     }
-
+                    
                 }
                 
                 Section(header: Text("Food Suggestions")) {
@@ -74,7 +74,7 @@ struct AddEventView: View {
                             date: eventDate,
                             participants: participants,
                             games: games,
-                            foodSuggestions: foodSuggestions 
+                            foodSuggestions: foodSuggestions
                         )
                         events.append(newEvent)
                         presentationMode.wrappedValue.dismiss()

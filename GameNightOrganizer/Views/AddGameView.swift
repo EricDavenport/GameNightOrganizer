@@ -45,7 +45,7 @@ struct AddGameView: View {
 
 struct AddGameView_Previews: PreviewProvider {
     @State static var games: [Game] = []
-
+    
     static var previews: some View {
         AddGameView(games: $games)
     }

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		581DBC772C4A114700A09E9E /* UserDatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 581DBC762C4A114700A09E9E /* UserDatabaseManager.swift */; };
 		581DBC792C4A228A00A09E9E /* GameDatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 581DBC782C4A228A00A09E9E /* GameDatabaseManager.swift */; };
+		581DBC7B2C4A270D00A09E9E /* EventDatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 581DBC7A2C4A270C00A09E9E /* EventDatabaseManager.swift */; };
 		584AEA882C41E5BD00213D0C /* GameNightOrganizerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584AEA872C41E5BD00213D0C /* GameNightOrganizerApp.swift */; };
 		584AEA8A2C41E5BD00213D0C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584AEA892C41E5BD00213D0C /* ContentView.swift */; };
 		584AEA8C2C41E5BE00213D0C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 584AEA8B2C41E5BE00213D0C /* Assets.xcassets */; };
@@ -38,6 +39,7 @@
 /* Begin PBXFileReference section */
 		581DBC762C4A114700A09E9E /* UserDatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDatabaseManager.swift; sourceTree = "<group>"; };
 		581DBC782C4A228A00A09E9E /* GameDatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDatabaseManager.swift; sourceTree = "<group>"; };
+		581DBC7A2C4A270C00A09E9E /* EventDatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDatabaseManager.swift; sourceTree = "<group>"; };
 		584AEA842C41E5BD00213D0C /* GameNightOrganizer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GameNightOrganizer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		584AEA872C41E5BD00213D0C /* GameNightOrganizerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameNightOrganizerApp.swift; sourceTree = "<group>"; };
 		584AEA892C41E5BD00213D0C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -81,6 +83,7 @@
 			children = (
 				581DBC762C4A114700A09E9E /* UserDatabaseManager.swift */,
 				581DBC782C4A228A00A09E9E /* GameDatabaseManager.swift */,
+				581DBC7A2C4A270C00A09E9E /* EventDatabaseManager.swift */,
 			);
 			path = DatabaseManagers;
 			sourceTree = "<group>";
@@ -254,6 +257,7 @@
 				586EBCFC2C42326800C1E6BD /* AddGameView.swift in Sources */,
 				584AEA982C41E73000213D0C /* EventDetailView.swift in Sources */,
 				587FE6EA2C48A9260087BFDE /* ProfileView.swift in Sources */,
+				581DBC7B2C4A270D00A09E9E /* EventDatabaseManager.swift in Sources */,
 				586EBCF52C42260D00C1E6BD /* Game.swift in Sources */,
 				586EBCF32C4225A300C1E6BD /* User.swift in Sources */,
 				581DBC772C4A114700A09E9E /* UserDatabaseManager.swift in Sources */,

@@ -4,9 +4,9 @@ import FirebaseFirestore
 class GameDatabaseManager {
     static let shaeed = GameDatabaseManager()
     
-    private let db = Firestore.firestore()
-    
     private init() {}
+    
+    private let db = Firestore.firestore()
     
     func addGame(game: Game, completion: @escaping (Result<Void, Error>) -> Void) {
         let data: [String: Any] = [

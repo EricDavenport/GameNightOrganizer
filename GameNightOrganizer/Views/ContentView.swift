@@ -15,7 +15,7 @@ class AppViewModel: ObservableObject {
                     let email = data["email"] as? String ?? ""
                     let friendList = (data["friednList"] as? [String] ?? []).compactMap { UUID(uuidString: $0) }
                     let friendIDs = data["friendIDs"] as? [String] ?? []
-                    self.user = User(firebaseID: user.uid, name: name, email: email, friendList: friendList, friendIDs: friendIDs)
+                    self.user = User(id: id, firebaseID: user.uid, name: name, email: email, friendList: friendList, friendIDs: friendIDs)
                 }
             }
         }
