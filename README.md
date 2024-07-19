@@ -32,12 +32,13 @@
 
 - [ ] Polish the app
     - [ ] Funtions
+        - [ ] Database managers
     - [ ] MVVM
     - [ ] Move functions from views
 - [ ] Make it look pretty
  
 
-### _Notes:_ 
+### _Crud Actions 
 - [X] (C)reation
     - [ ] User profile
     - [ ] New events
