@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		581DBC772C4A114700A09E9E /* UserDatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 581DBC762C4A114700A09E9E /* UserDatabaseManager.swift */; };
 		584AEA882C41E5BD00213D0C /* GameNightOrganizerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584AEA872C41E5BD00213D0C /* GameNightOrganizerApp.swift */; };
 		584AEA8A2C41E5BD00213D0C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584AEA892C41E5BD00213D0C /* ContentView.swift */; };
 		584AEA8C2C41E5BE00213D0C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 584AEA8B2C41E5BE00213D0C /* Assets.xcassets */; };
@@ -34,6 +35,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		581DBC762C4A114700A09E9E /* UserDatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDatabaseManager.swift; sourceTree = "<group>"; };
 		584AEA842C41E5BD00213D0C /* GameNightOrganizer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GameNightOrganizer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		584AEA872C41E5BD00213D0C /* GameNightOrganizerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameNightOrganizerApp.swift; sourceTree = "<group>"; };
 		584AEA892C41E5BD00213D0C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -72,11 +74,12 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		581DBC722C4A0E0600A09E9E /* Managers */ = {
+		581DBC752C4A111000A09E9E /* DatabaseManagers */ = {
 			isa = PBXGroup;
 			children = (
+				581DBC762C4A114700A09E9E /* UserDatabaseManager.swift */,
 			);
-			path = Managers;
+			path = DatabaseManagers;
 			sourceTree = "<group>";
 		};
 		584AEA7B2C41E5BD00213D0C = {
@@ -98,9 +101,9 @@
 		584AEA862C41E5BD00213D0C /* GameNightOrganizer */ = {
 			isa = PBXGroup;
 			children = (
-				581DBC722C4A0E0600A09E9E /* Managers */,
 				5898B2762C473E6200787D34 /* GoogleService-Info.plist */,
 				584AEA9D2C41E78700213D0C /* App */,
+				581DBC752C4A111000A09E9E /* DatabaseManagers */,
 				584AEA9B2C41E77200213D0C /* Views */,
 				584AEA9C2C41E77C00213D0C /* Models */,
 				586EBCFA2C422AAF00C1E6BD /* Helpers */,
@@ -250,6 +253,7 @@
 				587FE6EA2C48A9260087BFDE /* ProfileView.swift in Sources */,
 				586EBCF52C42260D00C1E6BD /* Game.swift in Sources */,
 				586EBCF32C4225A300C1E6BD /* User.swift in Sources */,
+				581DBC772C4A114700A09E9E /* UserDatabaseManager.swift in Sources */,
 				584AEA962C41E66E00213D0C /* GameNightEvent.swift in Sources */,
 				586EBCF72C42266900C1E6BD /* Food.swift in Sources */,
 				584AEA8A2C41E5BD00213D0C /* ContentView.swift in Sources */,
