@@ -5,5 +5,5 @@ struct Game: Identifiable {
     var name: String
     var numberOfPlayers: Int
     var isAdultOnly: Bool
-    var suggestBy: UUID? // User ID who suggested the game
+//    var suggestBy: UUID? // User ID who suggested the game
 }

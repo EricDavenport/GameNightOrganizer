@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		581DBC772C4A114700A09E9E /* UserDatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 581DBC762C4A114700A09E9E /* UserDatabaseManager.swift */; };
+		581DBC792C4A228A00A09E9E /* GameDatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 581DBC782C4A228A00A09E9E /* GameDatabaseManager.swift */; };
 		584AEA882C41E5BD00213D0C /* GameNightOrganizerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584AEA872C41E5BD00213D0C /* GameNightOrganizerApp.swift */; };
 		584AEA8A2C41E5BD00213D0C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584AEA892C41E5BD00213D0C /* ContentView.swift */; };
 		584AEA8C2C41E5BE00213D0C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 584AEA8B2C41E5BE00213D0C /* Assets.xcassets */; };
@@ -36,6 +37,7 @@
 
 /* Begin PBXFileReference section */
 		581DBC762C4A114700A09E9E /* UserDatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDatabaseManager.swift; sourceTree = "<group>"; };
+		581DBC782C4A228A00A09E9E /* GameDatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDatabaseManager.swift; sourceTree = "<group>"; };
 		584AEA842C41E5BD00213D0C /* GameNightOrganizer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GameNightOrganizer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		584AEA872C41E5BD00213D0C /* GameNightOrganizerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameNightOrganizerApp.swift; sourceTree = "<group>"; };
 		584AEA892C41E5BD00213D0C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -78,6 +80,7 @@
 			isa = PBXGroup;
 			children = (
 				581DBC762C4A114700A09E9E /* UserDatabaseManager.swift */,
+				581DBC782C4A228A00A09E9E /* GameDatabaseManager.swift */,
 			);
 			path = DatabaseManagers;
 			sourceTree = "<group>";
@@ -256,6 +259,7 @@
 				581DBC772C4A114700A09E9E /* UserDatabaseManager.swift in Sources */,
 				584AEA962C41E66E00213D0C /* GameNightEvent.swift in Sources */,
 				586EBCF72C42266900C1E6BD /* Food.swift in Sources */,
+				581DBC792C4A228A00A09E9E /* GameDatabaseManager.swift in Sources */,
 				584AEA8A2C41E5BD00213D0C /* ContentView.swift in Sources */,
 				587FE6E82C4864EC0087BFDE /* AuthView.swift in Sources */,
 				584AEA882C41E5BD00213D0C /* GameNightOrganizerApp.swift in Sources */,
