@@ -16,18 +16,18 @@
     - [X] Auth
     - [ ] Storage
     - [X] DB Manager
-     - [ ] Game database manager
-     - [X] User profile database manager
-     - [ ] Event database manager
-     - [ ] Upadted view with managers
+        - [ ] Game database manager
+        - [X] User profile database manager
+        - [ ] Event database manager
+        - [ ] Upadted view with managers
 - [ ] Add food view
 - [X] Profile view
 - [ ] Manage event
     - [ ] Edit event
-     - [ ] Edit button on even
-     - [ ] Add and remove games
-     - [ ] Add and remove food
-     - [ ] Add and remove participants
+    - [ ] Edit button on even
+    - [ ] Add and remove games
+    - [ ] Add and remove food
+    - [ ] Add and remove participants
 - [ ] Persist user across app
 
 - [ ] Polish the app
