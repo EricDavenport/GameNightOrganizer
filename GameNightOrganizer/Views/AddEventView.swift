@@ -7,9 +7,9 @@ struct AddEventView: View {
     @Binding var users: [User]
     @State private var eventName = ""
     @State private var eventDate = Date()
-    @State private var selectedParticipants: Set<UUID> = []
+    @State private var selectedParticipants: Set<String> = []
     @State private var games: [Game] = []
-    @State private var foodSuggestions: [String] = []
+    @State private var foodSuggestions: [Food] = []
     @State private var showingAddGame = false
     
     var body: some View {
@@ -21,15 +21,7 @@ struct AddEventView: View {
                 }
                 
                 Section(header: Text("Participants")) {
-                    List(users) { user in
-                        MultipleSelectionRow(title: user.name, isSelected: selectedParticipants.contains(user.id)) {
-                            if selectedParticipants.contains(user.id) {
-                                selectedParticipants.remove(user.id)
-                            } else {
-                                selectedParticipants.insert(user.id)
-                            }
-                        }
-                    }
+                    
                 }
                 
                 Section(header: Text("Games")) {
@@ -65,24 +57,6 @@ struct AddEventView: View {
                 }
             }
             .navigationTitle("Add New Event")
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    Button("Save") {
-                        let participants = users.filter { selectedParticipants.contains($0.id) }
-                        let newEvent = GameNightEvent(
-                            id: UUID(),
-                            name: eventName,
-                            date: eventDate,
-                            participants: participants.compactMap { $0.id },
-                            games: games,
-                            foodSuggestions: foodSuggestions
-                        )
-                        events.append(newEvent)
-                        presentationMode.wrappedValue.dismiss()
-                    }
-                    
-                }
-            }
         }
     }
     

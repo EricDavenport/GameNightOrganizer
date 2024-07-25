@@ -4,6 +4,7 @@ struct EventDetailView: View {
     var event: GameNightEvent
     @State private var suggestedGames: [Game] = []
     @State private var showingAddGames = false
+    @State private var errorMessage: String?
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -18,7 +19,16 @@ struct EventDetailView: View {
                 .font(.headline)
             
             ForEach(event.participants) { participant in
-                Text(participant.name)
+                let user = UserDatabaseManager.shared.loadUserProfile { result in
+                    switch result {
+                        case .success(let user):
+                            Text(user.name)
+                        case .failure(let error):
+                            Text("Error loading user profile")
+                            self.errorMessage = error.localizedDescription
+                            
+                    }
+                }
             }
             
             Text("Games:")
@@ -59,7 +69,7 @@ private let dateFormatter: DateFormatter = {
 
 struct EventDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        let sampleEvent = GameNightEvent(name: "Sample Event", date: Date(), participants: [User(firebaseID: "1234", name: "Eric", email: "a@email.com", friendList: [], friendIDs: [])], games: [Game(name: "Sample Game", numberOfPlayers: 4, isAdultOnly: false)], foodSuggestions: [Food(name: "Pizza")])
+        let sampleEvent = GameNightEvent(id: UUID(), name: "Sample Event", date: Date(), participants: [], games: [Game(name: "Sample Game", numberOfPlayers: 4, isAdultOnly: false, suggestedBy: "Eric")], foodSuggestions: [Food(name: "Pizza")])
         EventDetailView(event: sampleEvent)
     }
 }

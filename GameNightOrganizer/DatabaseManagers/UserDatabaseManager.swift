@@ -21,7 +21,7 @@ class UserDatabaseManager {
                 let id = UUID(uuidString: data["id"] as? String ?? "") ?? UUID()
                 let name = data["name"] as? String ?? ""
                 let email = data["email"] as? String ?? ""
-                let friendList = (data["friendList"] as? [String] ?? []).compactMap { UUID(uuidString: $0) }
+                let friendList = data["friendList"] as? [String] ?? []
                 let friendIDs = data["friendIDs"] as? [String] ?? []
                 let user = User(
                     id: id,
@@ -34,6 +34,29 @@ class UserDatabaseManager {
                 completion(.success(user))
             } else {
                 completion(.failure(error ?? NSError(domain: "Firestore Error", code: -1, userInfo: [NSLocalizedDescriptionKey: "Document does not exist."])))
+            }
+        }
+    }
+    
+    func loadUserProfile(byID uid: String, completion: @escaping (Result<User, Error>) ->Void) {
+        let docRef = db.collection("users").document(uid)
+        docRef.getDocument { document, error in
+            if let document = document, document.exists {
+                let data = document.data() ?? [:]
+                let id = UUID(uuidString: data["id"] as? String ?? "") ?? UUID()
+                let name = data["name"] as? String ?? ""
+                let email = data["email"] as? String ?? ""
+                let friendList = (data["friendLiat"] as? [String] ?? []).compactMap { UUID(uuidString: $0) }
+                let friendIDs = data["friendIDs"] as? [String] ?? []
+                
+                let user = User(
+                    id: id,
+                    firebaseID: uid,
+                    name: name,
+                    email: email,
+                    friendList: friendList,
+                    friendIDs: friendIDs
+                )
             }
         }
     }

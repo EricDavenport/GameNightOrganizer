@@ -13,7 +13,8 @@ class GameDatabaseManager {
             "id" : game.id.uuidString,
             "name" : game.name,
             "numberOfPlayers" : game.numberOfPlayers,
-            "isAdultOnly" : game.isAdultOnly
+            "isAdultOnly" : game.isAdultOnly,
+            "suggestedBy" : game.suggestedBy
         ]
         
         db.collection("games").document(game.id.uuidString).setData(data) { error in
@@ -42,10 +43,17 @@ class GameDatabaseManager {
                         let id = UUID(uuidString: idString),
                         let name = data["name"] as? String,
                         let numPlayers = data["numberOfPlayers"] as? Int,
-                        let isAdultOnly = data["isAdultOnly"] as? Bool
+                        let isAdultOnly = data["isAdultOnly"] as? Bool,
+                        let suggestedBy = data["suggestedBy"] as? String
                     else { return nil }
                     
-                    return Game(id: id, name: name, numberOfPlayers: numPlayers, isAdultOnly: isAdultOnly)
+                    return Game(
+                        id: id,
+                        name: name,
+                        numberOfPlayers: numPlayers,
+                        isAdultOnly: isAdultOnly,
+                        suggestedBy: suggestedBy
+                    )
                 }
                 completion(.success(games))
             }

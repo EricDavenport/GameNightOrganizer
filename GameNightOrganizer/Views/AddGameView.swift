@@ -1,5 +1,5 @@
-import Foundation
 import SwiftUI
+import Firebase
 
 struct AddGameView: View {
     @Environment(\.presentationMode) var presentationMode
@@ -24,24 +24,23 @@ struct AddGameView: View {
             Toggle(isOn: $isAdultOnly) {
                 Text("Adult Only")
             }
+            .padding()
             
-            TextField("Game description", text: $gameDescription)
-        }
-        .navigationTitle("New Game")
-        .padding()
-        
-        if let errorMessage = errorMessage {
-            Text(errorMessage)
-                .foregroundColor(.red)
-                .padding()
-        }
-        
-        Button(action: addGame) {
-            Text("Add Game")
-                .padding()
-                .background(Color.blue)
-                .foregroundColor(.white)
-                .cornerRadius(10)
+            
+            if let errorMessage = errorMessage {
+                Text(errorMessage)
+                    .foregroundColor(.red)
+                    .padding()
+            }
+            
+            Button(action: addGame) {
+                Text("Add Game")
+                    .padding()
+                    .background(Color.blue)
+                    .foregroundColor(.white)
+                    .cornerRadius(10)
+            }
+            .padding()
         }
         .padding()
     }
@@ -52,21 +51,36 @@ struct AddGameView: View {
             return
         }
         
-        let game = Game(
-            id: UUID(),
-            name: gameName,
-            numberOfPlayers: numberOfPlayers,
-            isAdultOnly: isAdultOnly
-        )
+        guard let user = Auth.auth().currentUser else {
+            errorMessage = "No user is currently logged in."
+            return
+        }
         
-        GameDatabaseManager.shared.addGame(game: game) { result in
+        UserDatabaseManager.shared.loadUserProfile { result in
             switch result {
-                case .success:
-                    errorMessage = "Game Added successfully"
+                case .success(let userProfile):
+                    let game = Game(
+                        id: UUID(),
+                        name: gameName,
+                        numberOfPlayers: numberOfPlayers,
+                        isAdultOnly: isAdultOnly,
+                        suggestedBy: userProfile.name
+                    )
+                    
+                    GameDatabaseManager.shared.addGame(game: game) { result in
+                        switch result {
+                            case .success:
+                                errorMessage = "Game Added successfully"
+                            case .failure(let error):
+                                errorMessage = error.localizedDescription
+                        }
+                    }
                 case .failure(let error):
                     errorMessage = error.localizedDescription
             }
         }
+        
+        
     }
 }
 
