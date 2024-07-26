@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		581D36D92C53F89000518602 /* GameNightCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 581D36D82C53F89000518602 /* GameNightCell.swift */; };
 		581D36DB2C540BAE00518602 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 581D36DA2C540BAE00518602 /* AuthViewModel.swift */; };
+		581D36DD2C54126900518602 /* MockAuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 581D36DC2C54126900518602 /* MockAuthViewModel.swift */; };
 		581DBC772C4A114700A09E9E /* UserDatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 581DBC762C4A114700A09E9E /* UserDatabaseManager.swift */; };
 		581DBC792C4A228A00A09E9E /* GameDatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 581DBC782C4A228A00A09E9E /* GameDatabaseManager.swift */; };
 		581DBC7B2C4A270D00A09E9E /* EventDatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 581DBC7A2C4A270C00A09E9E /* EventDatabaseManager.swift */; };
@@ -41,6 +42,7 @@
 /* Begin PBXFileReference section */
 		581D36D82C53F89000518602 /* GameNightCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameNightCell.swift; sourceTree = "<group>"; };
 		581D36DA2C540BAE00518602 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
+		581D36DC2C54126900518602 /* MockAuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAuthViewModel.swift; sourceTree = "<group>"; };
 		581DBC762C4A114700A09E9E /* UserDatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDatabaseManager.swift; sourceTree = "<group>"; };
 		581DBC782C4A228A00A09E9E /* GameDatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDatabaseManager.swift; sourceTree = "<group>"; };
 		581DBC7A2C4A270C00A09E9E /* EventDatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDatabaseManager.swift; sourceTree = "<group>"; };
@@ -169,6 +171,7 @@
 			isa = PBXGroup;
 			children = (
 				586EBCF82C422AA600C1E6BD /* MultipleSelectionRow.swift */,
+				581D36DC2C54126900518602 /* MockAuthViewModel.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -258,6 +261,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				581D36DD2C54126900518602 /* MockAuthViewModel.swift in Sources */,
 				584AEA9A2C41E76900213D0C /* AddEventView.swift in Sources */,
 				586EBCF92C422AA600C1E6BD /* MultipleSelectionRow.swift in Sources */,
 				581D36D92C53F89000518602 /* GameNightCell.swift in Sources */,

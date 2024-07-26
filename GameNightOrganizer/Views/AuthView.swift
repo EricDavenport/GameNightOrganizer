@@ -26,11 +26,20 @@ struct AuthView: View {
                     .padding()
             }
             
+            Toggle(isOn: $stayLoggedIn) {
+                Text("Stay logged in")
+            }
+            .padding()
+            
             Button(action: {
                 if isSignUp {
-                    signUp()
+                    authViewModel.signUp(email: email, password: password) { result in
+                        handleResult(result)
+                    }
                 } else {
-                    signIn()
+                    authViewModel.signIn(email: email, password: password) { result in
+                        handleResult(result)
+                    }
                 }
             }) {
                 Text(isSignUp ? "Sign Up" : "Sign In")
@@ -39,46 +48,39 @@ struct AuthView: View {
                     .foregroundColor(.white)
                     .cornerRadius(10)
             }
-        }
-    }
-    
-    private func signUp() {
-        Auth.auth().createUser(withEmail: email, password: password) { result, error in
-            if let error = error {
-                self.errorMessage = error.localizedDescription
-            } else if let result = result {
-                let user = result.user
-                let newUser = User(
-                    id: UUID(),
-                    firebaseID: user.uid,
-                    name: "",
-                    email: user.email ?? "",
-                    friendList: []
-                )
-                // Save user profile to fireStore
-                let db = Firestore.firestore()
-                db.collection("users").document(user.uid).setData([
-                    "id": newUser.id.uuidString,
-                    "name": newUser.name,
-                    "email": newUser.email,
-                    "friendList": []
-                ]) { error in
-                    if let error = error {
-                        self.errorMessage = error.localizedDescription
-                    }
-                }
+            .padding()
+            
+            Button(action: {
+                isSignUp.toggle()
+            }) {
+                Text(isSignUp ? "Already have an account? Sign In." : "Don't have an account? Sign up.")
             }
+            .padding()
         }
+        .padding()
     }
     
-    private func signIn() {
-        Auth.auth().signIn(withEmail: email, password: password) { result, error in
-            if let error = error {
-                self.errorMessage = error.localizedDescription
-            }}
+    private func handleResult(_ result: Result<Void, Error>) {
+        switch result {
+            case .success:
+                UserDefaults.standard.set(stayLoggedIn, forKey: "stayLoggedIn")
+            case .failure(let error):
+                errorMessage = error.localizedDescription
+        }
     }
+
 }
 
-#Preview {
-    AuthView()
+struct AuthView_Previews: PreviewProvider {
+    static var previews: some View {
+        Group {
+            AuthView(stayLoggedIn: .constant(false))
+                .environmentObject(MockAuthViewModel())
+                .previewDisplayName("Sign In")
+            
+            AuthView(stayLoggedIn: .constant(false))
+                .environmentObject(MockAuthViewModel())
+                .previewDisplayName("Sign Up")
+        }
+    }
 }

@@ -8,7 +8,7 @@ class AuthViewModel: ObservableObject {
     private var errorMessage = ""
     
     private var authStateListener: AuthStateDidChangeListenerHandle?
-
+    
     init() {
         self.stayLoggedIn = UserDefaults.standard.bool(forKey: "stayLoggedIn")
         self.authStateListener = Auth.auth().addStateDidChangeListener { _, user in
@@ -27,6 +27,17 @@ class AuthViewModel: ObservableObject {
     
     func signIn(email: String, password: String, completion: @escaping (Result<Void, Error>) -> Void) {
         Auth.auth().signIn(withEmail: email, password: password) { authResult, error in
+            if let error = error {
+                completion(.failure(error))
+            } else {
+                self.isAuthenticated = true
+                completion(.success(()))
+            }
+        }
+    }
+    
+    func signUp(email: String, password: String, completion: @escaping (Result<Void, Error>) -> Void) {
+        Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
             if let error = error {
                 completion(.failure(error))
             } else {
