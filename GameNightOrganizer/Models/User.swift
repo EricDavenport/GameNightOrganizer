@@ -5,15 +5,13 @@ struct User: Identifiable, Codable {
     var firebaseID: String
     var name: String
     var email: String
-    var friendList: [String]
-    var friendIDs: [String]  // Store firebase IDs
+    var friendList: [User]
     
-    init(id: UUID = UUID(), firebaseID: String, name: String, email: String, friendList: [String], friendIDs: [String]) {
+    init(id: UUID = UUID(), firebaseID: String, name: String, email: String, friendList: [User]) {
         self.id = id
         self.firebaseID = firebaseID
         self.name = name
         self.email = email
         self.friendList = friendList
-        self.friendIDs = friendIDs
     }
 }

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		581D36D92C53F89000518602 /* GameNightCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 581D36D82C53F89000518602 /* GameNightCell.swift */; };
+		581D36DB2C540BAE00518602 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 581D36DA2C540BAE00518602 /* AuthViewModel.swift */; };
 		581DBC772C4A114700A09E9E /* UserDatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 581DBC762C4A114700A09E9E /* UserDatabaseManager.swift */; };
 		581DBC792C4A228A00A09E9E /* GameDatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 581DBC782C4A228A00A09E9E /* GameDatabaseManager.swift */; };
 		581DBC7B2C4A270D00A09E9E /* EventDatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 581DBC7A2C4A270C00A09E9E /* EventDatabaseManager.swift */; };
@@ -37,6 +39,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		581D36D82C53F89000518602 /* GameNightCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameNightCell.swift; sourceTree = "<group>"; };
+		581D36DA2C540BAE00518602 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		581DBC762C4A114700A09E9E /* UserDatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDatabaseManager.swift; sourceTree = "<group>"; };
 		581DBC782C4A228A00A09E9E /* GameDatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDatabaseManager.swift; sourceTree = "<group>"; };
 		581DBC7A2C4A270C00A09E9E /* EventDatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDatabaseManager.swift; sourceTree = "<group>"; };
@@ -136,6 +140,7 @@
 				586EBCFB2C42326800C1E6BD /* AddGameView.swift */,
 				587FE6E72C4864EC0087BFDE /* AuthView.swift */,
 				587FE6E92C48A9260087BFDE /* ProfileView.swift */,
+				581D36D82C53F89000518602 /* GameNightCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -147,6 +152,7 @@
 				586EBCF22C4225A300C1E6BD /* User.swift */,
 				586EBCF42C42260D00C1E6BD /* Game.swift */,
 				586EBCF62C42266900C1E6BD /* Food.swift */,
+				581D36DA2C540BAE00518602 /* AuthViewModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -254,10 +260,12 @@
 			files = (
 				584AEA9A2C41E76900213D0C /* AddEventView.swift in Sources */,
 				586EBCF92C422AA600C1E6BD /* MultipleSelectionRow.swift in Sources */,
+				581D36D92C53F89000518602 /* GameNightCell.swift in Sources */,
 				586EBCFC2C42326800C1E6BD /* AddGameView.swift in Sources */,
 				584AEA982C41E73000213D0C /* EventDetailView.swift in Sources */,
 				587FE6EA2C48A9260087BFDE /* ProfileView.swift in Sources */,
 				581DBC7B2C4A270D00A09E9E /* EventDatabaseManager.swift in Sources */,
+				581D36DB2C540BAE00518602 /* AuthViewModel.swift in Sources */,
 				586EBCF52C42260D00C1E6BD /* Game.swift in Sources */,
 				586EBCF32C4225A300C1E6BD /* User.swift in Sources */,
 				581DBC772C4A114700A09E9E /* UserDatabaseManager.swift in Sources */,

@@ -6,6 +6,9 @@ struct AuthView: View {
     @State private var password = ""
     @State private var isSignUp = true
     @State private var errorMessage: String?
+    @Binding var stayLoggedIn: Bool
+    
+    @EnvironmentObject var authViewModel: AuthViewModel
     
     var body: some View {
         VStack {
@@ -50,8 +53,7 @@ struct AuthView: View {
                     firebaseID: user.uid,
                     name: "",
                     email: user.email ?? "",
-                    friendList: [],
-                    friendIDs: []
+                    friendList: []
                 )
                 // Save user profile to fireStore
                 let db = Firestore.firestore()
@@ -59,8 +61,7 @@ struct AuthView: View {
                     "id": newUser.id.uuidString,
                     "name": newUser.name,
                     "email": newUser.email,
-                    "friendList": [],
-                    "friendIDs": []
+                    "friendList": []
                 ]) { error in
                     if let error = error {
                         self.errorMessage = error.localizedDescription

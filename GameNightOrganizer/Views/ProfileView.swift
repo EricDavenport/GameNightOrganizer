@@ -5,6 +5,7 @@ struct ProfileView: View {
     @State private var user: User?
     @State private var errorMessage: String?
     @State private var newName = ""
+    let userID: String
     
     var body: some View {
         VStack {
@@ -39,7 +40,7 @@ struct ProfileView: View {
     }
     
     private func loadUserProfile() {
-        UserDatabaseManager.shared.loadUserProfile { result in
+        UserDatabaseManager.shared.loadUserProfile(byID: userID) { result in
             switch result {
                 case .success(let user):
                     self.user = user
@@ -51,17 +52,20 @@ struct ProfileView: View {
     }
     
     private func updateProfile() {
-        UserDatabaseManager.shared.updateProfile(name: newName) { result in
-            switch result {
-                case .success:
-                    self.user?.name = newName
-                case .failure(let error):
-                    self.errorMessage = error.localizedDescription
+        guard let user = Auth.auth().currentUser else { return }
+        let db = Firestore.firestore()
+        db.collection("users").document(user.uid).updateData([
+            "name": newName
+        ]) { error in
+            if let error = error {
+                self.errorMessage = error.localizedDescription
+            } else {
+                self.user?.name = newName
             }
         }
     }
 }
 
 #Preview {
-    ProfileView()
+    ProfileView(userID: "testUID")
 }

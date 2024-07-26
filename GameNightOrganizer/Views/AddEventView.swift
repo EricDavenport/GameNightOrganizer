@@ -68,7 +68,7 @@ struct AddEventView: View {
 
 struct AddEventView_Previews: PreviewProvider {
     @State static var events: [GameNightEvent] = []
-    @State static var users: [User] = [User(firebaseID: "1234", name: "Eric", email: "a@email.com", friendList: [], friendIDs: []),User(firebaseID: "2341", name: "Danny", email: "a@email.com", friendList: [], friendIDs: []),User(firebaseID: "3412", name: "Jay", email: "a@email.com", friendList: [], friendIDs: [])]
+    @State static var users: [User] = [User(firebaseID: "1234", name: "Eric", email: "a@email.com", friendList: []),User(firebaseID: "2341", name: "Danny", email: "a@email.com", friendList: []),User(firebaseID: "3412", name: "Jay", email: "a@email.com", friendList: [])]
     static var previews: some View {
         AddEventView(events: $events, users: $users)
     }

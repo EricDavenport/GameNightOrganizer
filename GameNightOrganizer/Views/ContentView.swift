@@ -13,9 +13,13 @@ class AppViewModel: ObservableObject {
                     let id = UUID(uuidString: data["id"] as? String ?? "") ?? UUID()
                     let name = data["name"] as? String ?? ""
                     let email = data["email"] as? String ?? ""
-                    let friendList = data["friednList"] as? [String] ?? []
-                    let friendIDs = data["friendIDs"] as? [String] ?? []
-                    self.user = User(id: id, firebaseID: user.uid, name: name, email: email, friendList: friendList, friendIDs: friendIDs)
+                    let friendList = data["friednList"] as? [User] ?? []
+                    self.user = User(
+                        id: id,
+                        firebaseID: user.uid,
+                        name: name,
+                        email: email,
+                        friendList: friendList)
                 }
             }
         }
@@ -29,18 +33,25 @@ struct ContentView: View {
     @State private var currentUser: User?
     @StateObject var viewModel = AppViewModel()
     @State private var showingAuthView = false
+    @State private var errorMessage: String?
     
     var body: some View {
         NavigationView {
-            List {
-                ForEach(events) { event in
-                    NavigationLink(destination: EventDetailView(event: event)) {
-                        Text(event.name)
-                    }
-                }
-                .onDelete(perform: deleteEvent)
+            List(events) { gameNight in
+                GameNightCell(gameNight: gameNight)
             }
-            .navigationTitle("Game Nights")
+            .navigationTitle("Upcoming Game Nights")
+            .navigationBarTitleDisplayMode(.inline)
+            .onAppear(perform: loadGameNights)
+            .alert(isPresented: .constant(errorMessage != nil)) {
+                Alert(
+                    title: Text("Error"),
+                    message: Text(errorMessage ?? "Unknown error"),
+                    dismissButton: .default(Text("OK")) {
+                        errorMessage = nil
+                    }
+                )
+            }
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button(action: {
@@ -56,11 +67,27 @@ struct ContentView: View {
         }
     }
     
+    private func loadGameNights() {
+        EventDatabaseManager.shared.loadGameNights { result in
+            switch result {
+                case .success(let gameNights):
+                    self.events = gameNights
+                case .failure(let error):
+                    self.errorMessage = error.localizedDescription
+            }
+        }
+    }
+    
     private func deleteEvent(at offsets: IndexSet) {
         events.remove(atOffsets: offsets)
     }
 }
 
 #Preview {
-    ContentView()
+    let sampleGames = [
+        Game(id: UUID(), name: "Monopoly", numberOfPlayers: 4, isAdultOnly: false, suggestedBy: "Eric"),
+        Game(id: UUID(), name: "Poker", numberOfPlayers: 6, isAdultOnly: true, suggestedBy: "Ashlie")
+    ]
+    
+    return ContentView()
 }

@@ -21,15 +21,14 @@ class UserDatabaseManager {
                 let id = UUID(uuidString: data["id"] as? String ?? "") ?? UUID()
                 let name = data["name"] as? String ?? ""
                 let email = data["email"] as? String ?? ""
-                let friendList = data["friendList"] as? [String] ?? []
+                let friendList = data["friendList"] as? [User] ?? []
                 let friendIDs = data["friendIDs"] as? [String] ?? []
                 let user = User(
                     id: id,
                     firebaseID: user.uid,
                     name: name,
                     email: email,
-                    friendList: friendList,
-                    friendIDs: friendIDs
+                    friendList: friendList
                 )
                 completion(.success(user))
             } else {
@@ -46,17 +45,19 @@ class UserDatabaseManager {
                 let id = UUID(uuidString: data["id"] as? String ?? "") ?? UUID()
                 let name = data["name"] as? String ?? ""
                 let email = data["email"] as? String ?? ""
-                let friendList = (data["friendLiat"] as? [String] ?? []).compactMap { UUID(uuidString: $0) }
-                let friendIDs = data["friendIDs"] as? [String] ?? []
+                let friendList = data["friendLiat"] as? [User] ?? []
                 
                 let user = User(
                     id: id,
                     firebaseID: uid,
                     name: name,
                     email: email,
-                    friendList: friendList,
-                    friendIDs: friendIDs
+                    friendList: friendList
                 )
+                
+                completion(.success(user))
+            } else {
+                completion(.failure(error ?? NSError(domain: "Documant does not exist", code: -1, userInfo: nil)))
             }
         }
     }
@@ -74,6 +75,45 @@ class UserDatabaseManager {
                 completion(.failure(error))
             } else {
                 completion(.success(()))
+            }
+        }
+    }
+    
+    func updateUserProfile(user: User, completion: @escaping (Result<Void, Error>) -> Void) {
+        do {
+            try db.collection("users").document(user.firebaseID).setData(from: user) { error in
+                if let error = error {
+                    completion(.failure(error))
+                } else {
+                    completion(.success(()))
+                }
+            }
+        } catch {
+            completion(.failure(error))
+        }
+    }
+    
+    func addFriend(userID: String, friend: User, completion: @escaping (Result<Void, Error>) -> Void) {
+        loadUserProfile(byID: userID) { result in
+            switch result {
+                case .success(var user):
+                    if user.friendList.contains(where: { $0.firebaseID == friend.firebaseID }) {
+                        user.friendList.append(friend)
+                        self.updateUserProfile(user: user, completion: completion)
+                    }
+                case .failure(let error):
+                    completion(.failure(error))
+            }
+        }
+    }
+    
+    func loadFriends(userID: String, completion: @escaping (Result<[User], Error>) -> Void) {
+        loadUserProfile(byID: userID) { result in
+            switch result {
+                case .success(let user):
+                    completion(.success(user.friendList))
+                case .failure(let error):
+                    completion(.failure(error))
             }
         }
     }
