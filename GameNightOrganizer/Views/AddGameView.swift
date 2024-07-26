@@ -51,7 +51,7 @@ struct AddGameView: View {
             return
         }
         
-        guard let user = Auth.auth().currentUser else {
+        guard let _ = Auth.auth().currentUser else {
             errorMessage = "No user is currently logged in."
             return
         }

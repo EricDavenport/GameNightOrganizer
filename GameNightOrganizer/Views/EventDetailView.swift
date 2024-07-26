@@ -19,16 +19,7 @@ struct EventDetailView: View {
                 .font(.headline)
             
             ForEach(event.participants) { participant in
-                let user = UserDatabaseManager.shared.loadUserProfile { result in
-                    switch result {
-                        case .success(let user):
-                            Text(user.name)
-                        case .failure(let error):
-                            Text("Error loading user profile")
-                            self.errorMessage = error.localizedDescription
-                            
-                    }
-                }
+                // TODO: Need to display users + profiles
             }
             
             Text("Games:")

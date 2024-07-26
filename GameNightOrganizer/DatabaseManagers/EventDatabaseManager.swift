@@ -2,7 +2,7 @@ import Firebase
 import FirebaseFirestore
 import FirebaseFirestoreSwift
 
-class EventDatabaseManager {
+class EventDatabaseManager: ObservableObject {
     static let shared = EventDatabaseManager()
     
     private init() {}

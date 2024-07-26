@@ -22,7 +22,6 @@ class UserDatabaseManager {
                 let name = data["name"] as? String ?? ""
                 let email = data["email"] as? String ?? ""
                 let friendList = data["friendList"] as? [User] ?? []
-                let friendIDs = data["friendIDs"] as? [String] ?? []
                 let user = User(
                     id: id,
                     firebaseID: user.uid,

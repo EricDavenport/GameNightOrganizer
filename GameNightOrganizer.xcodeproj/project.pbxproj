@@ -10,6 +10,7 @@
 		581D36D92C53F89000518602 /* GameNightCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 581D36D82C53F89000518602 /* GameNightCell.swift */; };
 		581D36DB2C540BAE00518602 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 581D36DA2C540BAE00518602 /* AuthViewModel.swift */; };
 		581D36DD2C54126900518602 /* MockAuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 581D36DC2C54126900518602 /* MockAuthViewModel.swift */; };
+		581D36E12C54287600518602 /* MainFeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 581D36E02C54287600518602 /* MainFeedView.swift */; };
 		581DBC772C4A114700A09E9E /* UserDatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 581DBC762C4A114700A09E9E /* UserDatabaseManager.swift */; };
 		581DBC792C4A228A00A09E9E /* GameDatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 581DBC782C4A228A00A09E9E /* GameDatabaseManager.swift */; };
 		581DBC7B2C4A270D00A09E9E /* EventDatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 581DBC7A2C4A270C00A09E9E /* EventDatabaseManager.swift */; };
@@ -43,6 +44,7 @@
 		581D36D82C53F89000518602 /* GameNightCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameNightCell.swift; sourceTree = "<group>"; };
 		581D36DA2C540BAE00518602 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		581D36DC2C54126900518602 /* MockAuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAuthViewModel.swift; sourceTree = "<group>"; };
+		581D36E02C54287600518602 /* MainFeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFeedView.swift; sourceTree = "<group>"; };
 		581DBC762C4A114700A09E9E /* UserDatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDatabaseManager.swift; sourceTree = "<group>"; };
 		581DBC782C4A228A00A09E9E /* GameDatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDatabaseManager.swift; sourceTree = "<group>"; };
 		581DBC7A2C4A270C00A09E9E /* EventDatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDatabaseManager.swift; sourceTree = "<group>"; };
@@ -143,6 +145,7 @@
 				587FE6E72C4864EC0087BFDE /* AuthView.swift */,
 				587FE6E92C48A9260087BFDE /* ProfileView.swift */,
 				581D36D82C53F89000518602 /* GameNightCell.swift */,
+				581D36E02C54287600518602 /* MainFeedView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -273,6 +276,7 @@
 				586EBCF52C42260D00C1E6BD /* Game.swift in Sources */,
 				586EBCF32C4225A300C1E6BD /* User.swift in Sources */,
 				581DBC772C4A114700A09E9E /* UserDatabaseManager.swift in Sources */,
+				581D36E12C54287600518602 /* MainFeedView.swift in Sources */,
 				584AEA962C41E66E00213D0C /* GameNightEvent.swift in Sources */,
 				586EBCF72C42266900C1E6BD /* Food.swift in Sources */,
 				581DBC792C4A228A00A09E9E /* GameDatabaseManager.swift in Sources */,
