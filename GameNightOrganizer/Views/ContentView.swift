@@ -20,10 +20,5 @@ struct ContentView: View {
 }
 
 #Preview {
-//    let sampleGames = [
-//        Game(id: UUID(), name: "Monopoly", numberOfPlayers: 4, isAdultOnly: false, suggestedBy: "Eric"),
-//        Game(id: UUID(), name: "Poker", numberOfPlayers: 6, isAdultOnly: true, suggestedBy: "Ashlie")
-//    ]
-    
-    return ContentView()
+    ContentView()
 }
