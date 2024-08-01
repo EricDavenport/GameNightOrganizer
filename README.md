@@ -1,4 +1,11 @@
-# _Family Game Night Organizer App_
+# **Family Game Night**
+
+Family Game Night is an app designed to simplify the planning and coordination of game nights with friends. The app allows
+users to manage events, suggest games and food, and invite friends to join the fun. Built with SwiftUI and Firebase, it offers a 
+seamless and intuitive user experience.
+
+## **Features**
+* User Authentication
 
 ## _To Do List_
 - [X] Event view list
@@ -46,20 +53,20 @@
     - [ ] New games
     - [ ] Add friends
 - [X] (R)ead
-    - [ ] Events
-    - [ ] Games
-    - [ ] Food
-    - [ ] Friends
+    - [X] Events
+    - [X] Games
+    - [X] Food
+    - [X] Friends
     - [ ] Users
 - [X] (U)pdate
-    - [ ] Profile
+    - [X] Profile
     - [ ] Events
     - [ ] Food
     - [ ] Games
 - [ ] (D)estroy
-    - [ ] Events
+    - [X] Events
     - [ ] Remove friends
-    - [ ] Remove/Delete food
-    - [ ] Remove/Delete games
+    - [X] Remove/Delete food
+    - [X] Remove/Delete games
 
 ### Clean up Read me
