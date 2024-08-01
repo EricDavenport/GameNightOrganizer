@@ -1,8 +1,8 @@
-# **Family Game Night**
+# Family Game Night
 
 Family Game Night is an app designed to simplify the planning and coordination of game nights with friends. The app allowsusers to manage events, suggest games and food, and invite friends to join the fun. Built with SwiftUI and Firebase, it offers a seamless and intuitive user experience.
 
-## **Features**
+## Features
 * User Authentication
   * SIgn in, sign up, and persistent login states using Firebase Auth
   * Secure profile management and authentication
@@ -20,11 +20,11 @@ Family Game Night is an app designed to simplify the planning and coordination o
   * Display a feed of upcoming game nights with summaries of participants, games and food
   
   
-## **Technologies Used**
-* [SwiftUI](https://developer.apple.com/xcode/swiftui/): For the user interface and front-end logic
-* [Firebase](https://firebase.google.com/):) : For backend services including Authentication, Firestore for real-time database amd Storage
+## Technologies Used
+* [SwiftUI](https://developer.apple.com/xcode/swiftui/) - For the user interface and front-end logic
+* [Firebase](https://firebase.google.com/) - For backend services including Authentication, Firestore for real-time database amd Storage
 
-## _To Do List_
+## To Do List
 - [X] Event view list
 - [X] Add new event
 - [X] Event detail view
@@ -62,7 +62,7 @@ Family Game Night is an app designed to simplify the planning and coordination o
 - [ ] Make it look pretty
  
 
-### _Crud Actions 
+### *Crud Actions*
 - [X] (C)reation
     - [ ] User profile
     - [ ] New events
