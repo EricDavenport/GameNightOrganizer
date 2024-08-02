@@ -24,3 +24,4 @@ Family Game Night is an app designed to simplify the planning and coordination o
 * [SwiftUI](https://developer.apple.com/xcode/swiftui/) - For the user interface and front-end logic
 * [Firebase](https://firebase.google.com/) - For backend services including Authentication, Firestore for real-time database amd Storage
 
+[TODO list](https://github.com/EricDavenport/GameNightOrganizer/blob/main/TODO.md)
